@@ -40,17 +40,14 @@ export default {
         }
     },
     computed: mapState({
-        name_required: state => state.step1.name_required,
-        email_required: state => state.step1.email_required,
-        phone_required: state => state.step1.phone_required
+        
+        name_required: state => state.step1.name === '' && state.step1.gatilho ? true : false,
+        email_required: state => state.step1.email === '' && state.step1.gatilho ? true : false,
+        phone_required: state => state.step1.phone === '' && state.step1.gatilho ? true : false,
+            
     }),
     
-    watch:{
-      required(){
-
-      }
-    }
-    
+  
 }
 </script>
 

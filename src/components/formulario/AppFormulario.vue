@@ -17,16 +17,10 @@ import AppFormPersonalInfo from '../formPersonalInfo/AppFormPersonalInfo.vue'
 export default {
     components:{AppBtnNext, AppBtnBack, AppFormPersonalInfo},
 
-    methods:{
-       
-        step1_required(){
-           this.$store.state.step1.name === '' ? this.$store.state.step1.name_required = true : this.$store.state.step1.name_required = false
-           this.$store.state.step1.email === '' ? this.$store.state.step1.email_required = true : this.$store.state.step1.email_required = false
-           this.$store.state.step1.phone === '' ? this.$store.state.step1.phone_required = true : this.$store.state.step1.phone_required = false
-        },
+    methods:{ 
 
         next(){
-            this.step1_required()  
+            this.$store.state.step1.gatilho = true 
         }
     }
 }
