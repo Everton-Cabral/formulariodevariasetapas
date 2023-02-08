@@ -1,0 +1,20 @@
+@import '../../scss/style.scss';
+
+.c-formulario{
+    width: 72%;
+    margin-left: 2px;
+    @extend .d-flex;
+    @extend .flex-direction-column;
+
+    &__corpo{
+        height: 90%;
+    }
+    
+
+    &__footer{
+        @extend .d-flex;
+        @extend .align-items-flex-end;
+        @extend .justify-content-space-between;
+        padding: 0px 90px 0px 90px;
+    }
+}

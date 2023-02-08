@@ -1,0 +1,53 @@
+@import '../../scss/style.scss';
+.c-step1{
+    padding: 50px 150px 0px 90px;
+    font-family: $font-principal;
+
+    &__titulo{
+        margin-bottom: 30px;
+    
+        h1{
+            color: $color-btn-azul-escuro;
+            margin-bottom: 10px;
+        }
+        span{
+            color: $color-cinza-claro-texto;
+        }
+    
+    }
+ 
+    &__formulario{
+        font-size: 14px;
+        color: $color-btn-azul-escuro;
+        span{
+            
+            font-weight: 700;
+        }
+
+        input{
+            width: 100%;
+            height: 35px;
+            margin: 5px 0px 20px 0px;
+            border-radius: 5px;
+            border: solid 1px $color-cinza-claro-texto;
+            color: $color-btn-azul-escuro;
+            font-weight: 700;
+            font-size: 14px;
+            padding-left: 10px;
+
+            
+        }
+        input::placeholder {
+            color: rgb(192, 192, 192);
+          }
+
+        &__titulo{
+            @extend .d-flex;
+            @extend .justify-content-space-between;
+
+            &__required{
+                color: red;
+            }
+        }
+    }
+}

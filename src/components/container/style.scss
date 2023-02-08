@@ -1,0 +1,9 @@
+@import '../../scss/style.scss';
+.c-container{
+    @extend .d-flex;
+    background-color: white;
+    margin: 8%;
+    width: 959px;
+    padding: 15px;
+    border-radius: 15px;
+}
