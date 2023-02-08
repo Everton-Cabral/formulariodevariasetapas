@@ -2,6 +2,7 @@
 .c-step1{
     padding: 50px 150px 0px 90px;
     font-family: $font-principal;
+   
 
     &__titulo{
         margin-bottom: 30px;
@@ -33,13 +34,17 @@
             color: $color-btn-azul-escuro;
             font-weight: 700;
             font-size: 14px;
-            padding-left: 10px;
-
-            
+            padding-left: 10px;    
         }
+      
         input::placeholder {
             color: rgb(192, 192, 192);
           }
+          
+        input:focus {
+            outline: none;
+            border: 1px solid rgb(139, 83, 217);
+          } 
 
         &__titulo{
             @extend .d-flex;

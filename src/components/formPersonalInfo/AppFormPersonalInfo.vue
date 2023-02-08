@@ -10,21 +10,21 @@
                 <span>Name</span> 
                 <span v-show="name_required" class="c-step1__formulario__titulo__required">This field is required</span>
             </div>
-            <input v-model="this.$store.state.step1.name" type="text" placeholder="e.g Stephen King">
+            <input v-model="this.$store.state.step1.name" :style="name_required ? 'border-color: red;' : ''" type="text" placeholder="e.g Stephen King">
 
 
             <div class="c-step1__formulario__titulo">
                 <span>Email Address</span> 
                 <span v-show="email_required" class="c-step1__formulario__titulo__required">This field is required</span>
             </div>
-            <input v-model="this.$store.state.step1.email" type="email" placeholder="e.g stephenking@lorem.com">
+            <input v-model="this.$store.state.step1.email" :style="email_required ? 'border-color: red;' : ''" type="email" placeholder="e.g stephenking@lorem.com">
 
 
             <div class="c-step1__formulario__titulo">
                 <span>Phone Number</span> 
                 <span v-show="phone_required" class="c-step1__formulario__titulo__required">This field is required</span>
             </div>
-            <input v-model="this.$store.state.step1.phone" type="text" placeholder="e.g + 1 234 567 890">
+            <input v-model="this.$store.state.step1.phone" :style="phone_required ? 'border-color: red;' : ''" type="text" placeholder="e.g + 1 234 567 890">
 
         </div>
     </div>
@@ -46,7 +46,9 @@ export default {
         phone_required: state => state.step1.phone === '' && state.step1.gatilho ? true : false,
             
     }),
-    
+    methods:{
+      
+    }
   
 }
 </script>
