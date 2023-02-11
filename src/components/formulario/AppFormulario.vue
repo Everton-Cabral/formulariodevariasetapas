@@ -1,7 +1,8 @@
 <template>
     <div class="c-formulario">
         <div class="c-formulario__corpo">
-            <AppFormPersonalInfo />
+            <AppFormPersonalInfo v-show="false"/>
+            <AppFormSelectPlan />
         </div>
         <div class="c-formulario__footer">
             <AppBtnBack />
@@ -14,8 +15,9 @@
 import AppBtnNext from '../btn/AppBtnNext.vue';
 import AppBtnBack from '../btn/AppBtnBack.vue'
 import AppFormPersonalInfo from '../formPersonalInfo/AppFormPersonalInfo.vue'
+import AppFormSelectPlan from '../selectplan/AppSelectPlan.vue'
 export default {
-    components:{AppBtnNext, AppBtnBack, AppFormPersonalInfo},
+    components:{AppBtnNext, AppBtnBack, AppFormPersonalInfo, AppFormSelectPlan},
 
     methods:{ 
 

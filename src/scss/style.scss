@@ -5,6 +5,7 @@ $font-principal: 'Ubuntu', sans-serif;
 $color-etapa-selecionada:hsl(206, 94%, 87%);
 $color-btn-azul-escuro: hsl(213, 96%, 18%);
 $color-cinza-claro-texto: hsl(231, 11%, 63%);
+$color-background: hsl(217, 100%, 97%);
 
 .d-flex{
     display: flex;
@@ -13,6 +14,17 @@ $color-cinza-claro-texto: hsl(231, 11%, 63%);
     flex-direction: column;
 }
 
+.form_title{
+    margin-bottom: 30px;
+    
+    h1{
+        color: $color-btn-azul-escuro;
+        margin-bottom: 10px;
+    }
+    span{
+        color: $color-cinza-claro-texto;
+    }
+}
 
 @each $justify-content in (center, space-between){
     .justify-content-#{$justify-content}{

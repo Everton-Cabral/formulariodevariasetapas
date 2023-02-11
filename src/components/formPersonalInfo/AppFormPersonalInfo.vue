@@ -25,7 +25,6 @@
                 <span v-show="phone_required" class="c-step1__formulario__titulo__required">This field is required</span>
             </div>
             <input v-model="this.$store.state.step1.phone" :style="phone_required ? 'border-color: red;' : ''" type="text" placeholder="e.g + 1 234 567 890">
-
         </div>
     </div>
 </template>
@@ -36,16 +35,29 @@ import { mapState } from 'vuex';
 export default {
     data() {
         return {
+            
           
         }
     },
-    computed: mapState({
+    computed:{
+        ...mapState({
+            name: state => state.step1.name,
+            email: state => state.step1.email,
+            phone: state => state.step1.phone,
+            gatilho: state => state.step1.gatilho
+        }),
         
-        name_required: state => state.step1.name === '' && state.step1.gatilho ? true : false,
-        email_required: state => state.step1.email === '' && state.step1.gatilho ? true : false,
-        phone_required: state => state.step1.phone === '' && state.step1.gatilho ? true : false,
-            
-    }),
+    name_required(){
+        return  this.name === '' && this.gatilho
+    },
+    email_required(){
+        return  this.email === '' && this.gatilho 
+    },
+    phone_required(){
+        return  this.phone === '' && this.gatilho 
+    },
+
+    },
     methods:{
       
     }

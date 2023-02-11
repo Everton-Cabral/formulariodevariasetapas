@@ -5,6 +5,7 @@
 <script>
 
 import AppContainer from './components/container/AppContainer'
+
 export default {
   components:{AppContainer}
 }
