@@ -1,25 +1,26 @@
 <template>
     <div class="c-plain">
         
-        <div class="c-plain__titulo">
-            <h1>Select your plan</h1>
-            <span>You have the option of monthly or yearly billing</span>
-        </div>
-
         <div class="c-plain__plans">
 
 
             <div class="c-plain__plans__plan">
                 <div class="c-plain__plans__plan__img">
-                    <img src="../../assets/img/icon-arcade.svg" alt="arcade">
+                    <slot name="imagem"></slot>
                 </div>
                 
                 
                 <div class="c-plain__plans__plan__price">
-                    <h4>Arcade</h4> 
-                    <span v-show="payment==='monthly'">$9/mo</span> 
-                    <span v-show="payment==='yearly'">$90/yr</span> 
-                    <h6 v-show="payment==='yearly'">2 months free</h6>
+                    <h4>{{ titulo }}</h4> 
+
+                    <template v-if="this.$store.state.paymentYearly">
+                        <span>{{ yr }}</span> 
+                        <h6>{{ free }}</h6>
+                    </template>
+
+                    <template v-else>
+                        <span>{{ mo }}</span> 
+                    </template>
                 </div>
 
             </div>
@@ -29,7 +30,28 @@
 
 <script>
 export default {
-
+    props:{
+        imagem:{
+            type: String,
+            required: true,
+        },
+        titulo:{
+            type: String,
+            required: true
+        },
+        mo:{
+            type: String,
+            required: true
+        },
+        yr:{
+            type: String,
+            required: true
+        },
+        free:{
+            type: String,
+            required: true
+        }
+    }
 }
 </script>
 

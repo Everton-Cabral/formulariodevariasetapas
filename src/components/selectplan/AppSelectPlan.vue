@@ -8,57 +8,50 @@
         <div class="c-step2__plans">
 
 
-            <div class="c-step2__plans__plan">
-                <div class="c-step2__plans__plan__img">
+            <AppPlain 
+                titulo="Arcade"
+                mo="$9/mo"
+                yr="$90/yr"
+                free="2 months free"
+            >
+
+                <template v-slot:imagem>
                     <img src="../../assets/img/icon-arcade.svg" alt="arcade">
-                </div>
-                
-                
-                <div class="c-step2__plans__plan__price">
-                    <h4>Arcade</h4> 
-                    <span v-show="payment==='monthly'">$9/mo</span> 
-                    <span v-show="payment==='yearly'">$90/yr</span> 
-                    <h6 v-show="payment==='yearly'">2 months free</h6>
-                </div>
+                </template>
+            </AppPlain>
 
-            </div>
+            <AppPlain 
+                titulo="Advanced"
+                mo="$12/mo"
+                yr="$120/yr"
+                free="2 months free"
+            >
 
-
-            <div class="c-step2__plans__plan">
-                <div class="c-step2__plans__plan__img">
+                <template v-slot:imagem>
                     <img src="../../assets/img/icon-advanced.svg" alt="advanced">
-                </div>
-                
-                <div class="c-step2__plans__plan__price">
-                    <h4>Advanced</h4>
-                    <span v-show="payment==='monthly'">$12/mo</span>  
-                    <span v-show="payment==='yearly'">$120/yr</span> 
-                    <h6 v-show="payment==='yearly'">2 months free</h6>
-                </div>
+                </template>
+            </AppPlain>
 
-            </div>
+            <AppPlain 
+                titulo="Advanced"
+                mo="$15/mo"
+                yr="$150/yr"
+                free="2 months free"
+            >
 
+                <template v-slot:imagem>
+                    <img src="../../assets/img/icon-pro.svg" alt="advanced">
+                </template>
+            </AppPlain>
+            
 
-            <div class="c-step2__plans__plan">
-                <div class="c-step2__plans__plan__img">
-                    <img src="../../assets/img/icon-pro.svg" alt="pro">
-                </div>
-                
-                <div class="c-step2__plans__plan__price">
-                    <h4>Pro</h4>
-                     <span v-show="payment==='monthly'">$15/mo</span>   
-                     <span v-show="payment==='yearly'">$150/yr</span> 
-                    <h6 v-show="payment==='yearly'">2 months free</h6>
-                </div>
-        
-            </div>
 
         </div>
 
         <div class="c-step2__payment">
-            <span :style="payment ==='monthly' ? stylePayment: ''">Monthly</span>
-            <Toggle v-model="value" class="c-step2__payment__toggle" />
-            <span :style="payment ==='yearly' ? stylePayment: ''">Yearly</span>
+            <span :style="!this.$store.state.paymentYearly ? stylePayment : ''">Monthly</span>
+            <Toggle v-model="this.$store.state.paymentYearly" class="c-step2__payment__toggle" />
+            <span :style=" this.$store.state.paymentYearly ? stylePayment : ''">Yearly</span>
             
         </div>
     </div>
@@ -66,24 +59,19 @@
 
 <script>
 
-
+import AppPlain from '../plain/AppPlain.vue'
 import Toggle from '@vueform/toggle'
 
 export default {
     data() {
       return {
-        value: false,
         stylePayment: 'color: hsl(213, 96%, 18%);  font-weight: bold;'
 
       }
     },
-  components: { Toggle},
+  components: { Toggle, AppPlain },
   
-  computed:{
-    payment(){
-       return this.value ? 'yearly' : 'monthly'
-    }
-  }
+ 
 }
 </script>
 

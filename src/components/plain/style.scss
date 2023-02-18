@@ -2,9 +2,8 @@
 @import "@vueform/toggle/themes/default.css";
 
 
-.c-step2{
-    padding: 50px 150px 0px 90px;
-    font-family: $font-principal;
+.c-plain{
+   
    
     &__titulo{
         @extend .form_title
@@ -58,31 +57,6 @@
         }
     }
 
-    &__payment{
-        font-family:$font-principal;
-        background-color: $color-background;
-        color:  $color-cinza-claro-texto;
-        @extend .d-flex;
-        justify-content: space-around;
-        padding: 0px 80px 0px 80px;
-        align-items: center;
-        height: 45px;
-        margin-top: 30px;
-        border-radius: 5px;
-
-        &__toggle{
-            --toggle-bg-on: hsl(213, 96%, 18%);
-            --toggle-border-on: hsl(213, 96%, 18%);
-            --toggle-bg-off: hsl(213, 96%, 18%);
-            --toggle-border-off: hsl(213, 96%, 18%);
-                       
-        }
-        &__toggle:focus{
-            box-shadow: none;
-        }
-
-        span{
-            font-size: 14px;
-        }
-    }
+    
+    
 }

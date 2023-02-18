@@ -14,48 +14,9 @@
         @extend .d-flex;
         @extend  .justify-content-space-between;
 
-        &__plan{
-            @extend .d-flex;
-            flex-direction: column;
-            
-            border: 1px solid  $color-cinza-claro-texto;
-            padding: 15px 0px 0px 15px;
-            width: 120px;
-            align-content: space-between;
-            border-radius: 10px;
-            
+       
 
-            &__img{
-                height: 60%;
-                margin-bottom: 50px;
-            }
-
-            &__price{
-             display: flex;
-             flex-direction: column;
-             padding-bottom: 10px;
-             font-family: $font-principal;
-             
-            h4{
-                color: $color-btn-azul-escuro;
-            }
-            span{
-                color: $color-cinza-claro-texto;
-                font-size: 12px;
-                margin-top: 5px;
-            }
-            h6{
-                color: $color-btn-azul-escuro;
-                margin-top: 5px;
-            }
-                
-            }
-        }
-
-        &__plan:hover{
-            cursor: pointer;
-            background-color: $color-background;
-        }
+       
     }
 
     &__payment{

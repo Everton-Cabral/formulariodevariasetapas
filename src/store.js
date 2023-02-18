@@ -7,9 +7,14 @@ export default createStore({
         email: '',
         phone: '',
         gatilho: false
+    },
+    paymentYearly: false
+  },
+  mutations: {
+    togglePaymentYearly(state){
+      state.paymentYearly = !state.paymentYearly
     }
   },
-  mutations: {},
   actions: {},
   getters: {}
 })
