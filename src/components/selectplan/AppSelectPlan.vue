@@ -66,6 +66,7 @@
 
 <script>
 
+
 import Toggle from '@vueform/toggle'
 
 export default {
@@ -76,7 +77,7 @@ export default {
 
       }
     },
-  components: { Toggle },
+  components: { Toggle},
   
   computed:{
     payment(){

@@ -67,4 +67,3 @@ export default {
 
 <style src="./style.scss" lang="scss" scoped/>
 
-
