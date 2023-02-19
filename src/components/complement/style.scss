@@ -10,6 +10,7 @@
     height: 65px;
     color: $color-btn-azul-escuro;
     padding: 0px 20px 0px 25px;
+    margin-bottom: 10px;
 
     &__leftside{
         @extend .d-flex;

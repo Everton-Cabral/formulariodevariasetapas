@@ -6,14 +6,21 @@
             </div>
 
             <div class="c-complement__leftside__description">
-                <h4>Online Service</h4>
+                <h4>{{ title }}</h4>
     
-                <span>Access to multiplayer games </span>
+                <span>{{ subTitle }} </span>
             </div>
         </div>
 
         <div class="c-complement__price">
-            +$1/mo
+          
+            <span v-if="this.$store.state.paymentYearly">
+               {{ yr }}
+           </span>   
+            <span v-else>
+                {{ mo }}
+            </span>    
+
         </div>
     </div>
 </template>
@@ -24,7 +31,23 @@ export default {
         checked:{
             type: Boolean,
             required: true
-        }
+        },
+        title:{
+            type: String,
+            required: true
+        },
+        subTitle:{
+            type: String,
+            required: true
+        },
+        mo:{
+            type: String,
+            required: true
+        },
+        yr:{
+            type: String,
+            required: true
+        },
     },
 
     computed:{
