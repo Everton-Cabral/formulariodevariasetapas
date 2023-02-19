@@ -10,11 +10,7 @@ export default createStore({
     },
     paymentYearly: false
   },
-  mutations: {
-    togglePaymentYearly(state){
-      state.paymentYearly = !state.paymentYearly
-    }
-  },
+  mutations: {},
   actions: {},
   getters: {}
 })

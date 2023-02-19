@@ -1,0 +1,11 @@
+@import '../../scss/style.scss';
+
+
+.c-complements{
+    padding: 50px 150px 0px 90px;
+    font-family: $font-principal;
+   
+    &__titulo{
+        @extend .form_title
+    }
+}

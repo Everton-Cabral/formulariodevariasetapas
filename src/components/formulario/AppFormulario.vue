@@ -5,10 +5,8 @@
            
         </div>
         <div class="c-formulario__footer">
-          <router-link :to="steps[count]"><AppBtnBack  @click="back"/></router-link>  
-            <router-link :to="steps[count]"><AppBtnNext @click="next"/></router-link>
-          
-            
+            <AppBtnBack  @click="back"/>
+            <AppBtnNext @click="next"/>    
         </div>
     </div>
 </template>
@@ -19,31 +17,30 @@ import AppBtnBack from '../btn/AppBtnBack.vue'
 
 export default {
     components:{AppBtnNext, AppBtnBack},
-
+    
     data(){
         return{
-            count:0,
-            steps:['/step1','/step2','/step3']
+            currentStep: 1
         }
     },
-
+  
     methods:{ 
 
         back(){
-            this.count--
+            this.currentStep--
+            if(this.currentStep === 0) this.currentStep = 1
+            this.$router.push(`/step${this.currentStep}`)
         },
 
         next(){
-            this.count++
+            this.currentStep++
+            if(this.currentStep === 4) this.currentStep = 1
+            this.$router.push(`/step${this.currentStep}`)
             this.$store.state.step1.gatilho = true 
+           
         }
     },
 
-    computed:{
-        step(){
-            return ''
-        }
-    }
 }
 </script>
 
