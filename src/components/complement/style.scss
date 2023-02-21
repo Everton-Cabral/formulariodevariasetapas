@@ -9,13 +9,13 @@
     width: 100%;
     height: 65px;
     color: $color-btn-azul-escuro;
-    padding: 0px 20px 0px 25px;
     margin-bottom: 10px;
 
     &__leftside{
         @extend .d-flex;
         @extend .justify-content-space-between;
         @extend .align-items-center;
+        padding-left: 20px;
 
         &__checkbox{
             input{
@@ -40,6 +40,7 @@
         color:rgb(139, 83, 217);
         font-size: 14px;
         font-weight: 600;
+        padding-right: 20px;
     }
       
 }

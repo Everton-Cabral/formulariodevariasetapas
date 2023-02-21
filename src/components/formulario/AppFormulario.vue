@@ -34,7 +34,7 @@ export default {
 
         next(){
             this.currentStep++
-            if(this.currentStep === 4) this.currentStep = 1
+            if(this.currentStep === 5) this.currentStep = 1
             this.$router.push(`/step${this.currentStep}`)
             this.$store.state.step1.gatilho = true 
            

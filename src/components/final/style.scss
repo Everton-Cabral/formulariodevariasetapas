@@ -1,0 +1,58 @@
+@import '../../scss/style.scss';
+
+
+.c-final{
+    padding: 50px 90px 0px 90px;
+    font-family: $font-principal;
+   
+    &__titulo{
+        @extend .form_title
+    }
+
+    &__planfeatures{
+        background-color: $color-background;
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+
+        hr{
+            margin-top: 20px;
+            opacity: 0.4;
+        }
+
+        &__typeofplan{
+            @extend .d-flex;
+            @extend .justify-content-space-between;
+            @extend .align-items-center;
+
+            &__description{
+                h4{
+                    color: $color-btn-azul-escuro;
+                    padding-bottom: 5px;
+                }
+                a{
+                    color: $color-cinza-claro-texto;       
+                }
+            }
+            &__price{
+                color: $color-btn-azul-escuro;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__total{
+        @extend .d-flex;
+        @extend .justify-content-space-between;
+        padding: 20px 20px 20px 20px;
+
+        &__description{
+            color: $color-cinza-claro-texto;
+            font-size: 15px;
+        }
+        &__price{
+            font-size: 18px;
+            color: hsl(243, 100%, 62%);
+            font-weight: bold;
+        }
+    }
+}

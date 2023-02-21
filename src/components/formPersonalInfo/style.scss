@@ -1,6 +1,6 @@
 @import '../../scss/style.scss';
 .c-step1{
-    padding: 50px 150px 0px 90px;
+    padding: 50px 90px 0px 90px;
     font-family: $font-principal;
    
 
@@ -20,9 +20,11 @@
     &__formulario{
         font-size: 14px;
         color: $color-btn-azul-escuro;
+        padding-right: 10px;
         span{
             font-weight: 700;
         }
+        
 
         input{
             width: 100%;
@@ -32,12 +34,12 @@
             border: solid 1px $color-cinza-claro-texto;
             color: $color-btn-azul-escuro;
             font-weight: 700;
-            font-size: 14px;
-            padding-left: 10px;    
+            font-size: 14px;      
         }
       
         input::placeholder {
             color: rgb(192, 192, 192);
+            padding-left: 10px;
           }
           
         input:focus {
