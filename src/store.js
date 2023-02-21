@@ -8,9 +8,20 @@ export default createStore({
         phone: '',
         gatilho: false
     },
+    typeOfPlan: {
+      titulo:'',
+      mo:'',
+      yr:''
+    },
     paymentYearly: false
   },
-  mutations: {},
+  mutations: {
+    selectedPlan(state, params){
+      state.typeOfPlan.titulo = params.titulo
+      state.typeOfPlan.mo = params.mo
+      state.typeOfPlan.yr = params.yr
+    }
+  },
   actions: {},
   getters: {}
 })

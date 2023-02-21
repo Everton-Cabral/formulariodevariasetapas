@@ -53,10 +53,14 @@
 
         &__plan:hover{
             cursor: pointer;
-            background-color: $color-background;
+            border-color: hsl(272, 100%, 62%);
         }
+        
     }
 
-    
+    .active{
+        background-color: $color-background;
+        border-color: hsl(272, 100%, 62%);
+    }
     
 }

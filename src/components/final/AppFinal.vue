@@ -9,12 +9,12 @@
         <div class="c-final__planfeatures">
             <div class="c-final__planfeatures__typeofplan">
                 <div class="c-final__planfeatures__typeofplan__description">
-                    <h4>Arcade(Monthly)</h4>
+                    <h4>{{ this.$store.state.typeOfPlan.titulo }}({{ payment }})</h4>
                     <a href="#">Change</a>
                 </div>
 
                 <div class="c-final__planfeatures__typeofplan__price">
-                    $9/mo
+                    {{ price }}
                 </div>
             </div>
 
@@ -47,7 +47,17 @@
 <script>
 import AppAdditionalAddOns from '../additionalAddOns/AppAdditionalAddOns.vue';
 export default {
-    components:{AppAdditionalAddOns}
+    components:{AppAdditionalAddOns},
+    computed:{
+        payment(){
+            return this.$store.state.paymentYearly ? 'Yearly ' : 'Monthly'
+        },
+        price(){
+            return this.$store.state.paymentYearly 
+                ? this.$store.state.typeOfPlan.yr 
+                : this.$store.state.typeOfPlan.mo
+        }
+    }
 }
 </script>
 

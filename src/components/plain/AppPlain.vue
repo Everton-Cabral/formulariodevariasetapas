@@ -4,7 +4,7 @@
         <div class="c-plain__plans">
 
 
-            <div class="c-plain__plans__plan">
+            <div class="c-plain__plans__plan" :class="active">
                 <div class="c-plain__plans__plan__img">
                     <slot name="imagem"></slot>
                 </div>
@@ -50,6 +50,11 @@ export default {
         free:{
             type: String,
             required: true
+        }
+    },
+    computed:{
+        active(){
+          return  this.titulo === this.$store.state.typeOfPlan.titulo ? "active" : " "
         }
     }
 }

@@ -6,13 +6,12 @@
         </div>
 
         <div class="c-step2__plans">
-
-
             <AppPlain 
                 titulo="Arcade"
                 mo="$9/mo"
                 yr="$90/yr"
                 free="2 months free"
+                @click="selectedPlan('Arcade', '$9/mo', '$90/yr')"
             >
 
                 <template v-slot:imagem>
@@ -25,6 +24,7 @@
                 mo="$12/mo"
                 yr="$120/yr"
                 free="2 months free"
+                @click="selectedPlan('Advanced', '$12/mo','$120/yr')"
             >
 
                 <template v-slot:imagem>
@@ -33,19 +33,16 @@
             </AppPlain>
 
             <AppPlain 
-                titulo="Advanced"
+                titulo="Pro"
                 mo="$15/mo"
                 yr="$150/yr"
                 free="2 months free"
+                @click="selectedPlan('Pro', '$15/mo', '$150/yr')"
             >
-
                 <template v-slot:imagem>
                     <img src="../../assets/img/icon-pro.svg" alt="advanced">
                 </template>
             </AppPlain>
-            
-
-
         </div>
 
         <div class="c-step2__payment">
@@ -54,6 +51,7 @@
             <span :style=" this.$store.state.paymentYearly ? stylePayment : ''">Yearly</span>
             
         </div>
+        
     </div>
 </template>
 
@@ -63,14 +61,24 @@ import AppPlain from '../plain/AppPlain.vue'
 import Toggle from '@vueform/toggle'
 
 export default {
+    components: { Toggle, AppPlain },
+
     data() {
       return {
         stylePayment: 'color: hsl(213, 96%, 18%);  font-weight: bold;'
 
       }
     },
-  components: { Toggle, AppPlain },
-  
+    methods:{
+        selectedPlan(titulo,mo,yr){
+           let params = {
+            titulo,
+            mo,
+            yr
+           }
+             this.$store.commit('selectedPlan', params)
+        }
+    }
  
 }
 </script>
