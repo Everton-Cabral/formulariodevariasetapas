@@ -1,7 +1,7 @@
 <template>
     <div class="c-step">
         
-        <div class="c-step__number ">
+        <div class="c-step__number" :class="active">
             {{ numero }}
         </div>
         <div class="c-step__descricao">
@@ -17,6 +17,11 @@ export default {
         numero: String,
         step: String,
         descricao: String,
+    },
+    computed:{
+       active(){
+        return this.$store.state.currentStep == this.numero ? 'active' : ''
+       }
     }
 }
 </script>

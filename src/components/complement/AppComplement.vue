@@ -2,23 +2,27 @@
     <div class="c-complement" :class="activeClass">
         <div class="c-complement__leftside">
             <div class="c-complement__leftside__checkbox">
-                <input type="checkbox" :checked="checked" id="my-checkbox">
+                <input type="checkbox" :checked="complement.checked" id="my-checkbox">
             </div>
 
             <div class="c-complement__leftside__description">
-                <h4>{{ title }}</h4>
+                <h4>
+                    {{ complement.title }}
+                </h4>
     
-                <span>{{ subTitle }} </span>
+                <span>
+                    {{ complement.subTitle }} 
+                </span>
             </div>
         </div>
 
         <div class="c-complement__price">
           
             <span v-if="this.$store.state.paymentYearly">
-               {{ yr }}
+              +${{ complement.yr }}/yr
            </span>   
             <span v-else>
-                {{ mo }}
+                +${{ complement.mo }}/mo
             </span>    
 
         </div>
@@ -26,37 +30,24 @@
 </template>
 
 <script>
+
 export default {
     props:{
-        checked:{
-            type: Boolean,
+        complement:{
+            type: Object,
             required: true
-        },
-        title:{
-            type: String,
-            required: true
-        },
-        subTitle:{
-            type: String,
-            required: true
-        },
-        mo:{
-            type: String,
-            required: true
-        },
-        yr:{
-            type: String,
-            required: true
-        },
+        }
     },
-
+   
     computed:{
         activeClass(){
             let resultado
-            if(this.checked) resultado ='c-complement--active'
+            if(this.complement.checked) resultado ='c-complement--active'
             return resultado
         }
-    }
+    },
+ 
+   
 }
 </script>
 

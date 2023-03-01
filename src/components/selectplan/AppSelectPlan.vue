@@ -6,52 +6,35 @@
         </div>
 
         <div class="c-step2__plans">
-            <AppPlain 
-                titulo="Arcade"
-                mo="$9/mo"
-                yr="$90/yr"
-                free="2 months free"
-                @click="selectedPlan('Arcade', '$9/mo', '$90/yr')"
-            >
-
+            <div v-for="plain in plains" :key="plain.title">
+                <AppPlain 
+                    :title="plain.title"
+                    :mo="plain.mo"
+                    :yr="plain.yr"
+                    :free="plain.free"  
+                    @click="selected(plain.title, plain.mo, plain.yr)"  
+                >
                 <template v-slot:imagem>
-                    <img src="../../assets/img/icon-arcade.svg" alt="arcade">
+                    <img :src="require(`../../assets/img/${plain.img}`)" :alt="plain.title">
                 </template>
-            </AppPlain>
 
-            <AppPlain 
-                titulo="Advanced"
-                mo="$12/mo"
-                yr="$120/yr"
-                free="2 months free"
-                @click="selectedPlan('Advanced', '$12/mo','$120/yr')"
-            >
-
-                <template v-slot:imagem>
-                    <img src="../../assets/img/icon-advanced.svg" alt="advanced">
-                </template>
             </AppPlain>
-
-            <AppPlain 
-                titulo="Pro"
-                mo="$15/mo"
-                yr="$150/yr"
-                free="2 months free"
-                @click="selectedPlan('Pro', '$15/mo', '$150/yr')"
-            >
-                <template v-slot:imagem>
-                    <img src="../../assets/img/icon-pro.svg" alt="advanced">
-                </template>
-            </AppPlain>
+                
+            </div> 
         </div>
 
         <div class="c-step2__payment">
-            <span :style="!this.$store.state.paymentYearly ? stylePayment : ''">Monthly</span>
+            <span :style="!this.$store.state.paymentYearly ? stylePayment : ''">
+                Monthly
+            </span>
+
             <Toggle v-model="this.$store.state.paymentYearly" class="c-step2__payment__toggle" />
-            <span :style=" this.$store.state.paymentYearly ? stylePayment : ''">Yearly</span>
+
+            <span :style=" this.$store.state.paymentYearly ? stylePayment : ''">
+                Yearly
+            </span>
             
         </div>
-        
     </div>
 </template>
 
@@ -59,24 +42,52 @@
 
 import AppPlain from '../plain/AppPlain.vue'
 import Toggle from '@vueform/toggle'
+import { mapMutations } from 'vuex'
 
 export default {
     components: { Toggle, AppPlain },
 
     data() {
       return {
+        plains:{
+            plain1:{
+                title:"Arcade",
+                mo:9,
+                yr:90,
+                free:"2 months free",
+                img:"icon-arcade.svg"
+            },
+            plain2:{
+                title:"Advanced",
+                mo:12,
+                yr:120,
+                free:"2 months free",
+                img:"icon-advanced.svg"
+            },
+            plain3:{
+                title:"Pro",
+                mo:15,
+                yr:150,
+                free:"2 months free",
+                img:"icon-pro.svg"
+            }
+        },
         stylePayment: 'color: hsl(213, 96%, 18%);  font-weight: bold;'
 
       }
     },
     methods:{
-        selectedPlan(titulo,mo,yr){
+        ...mapMutations([
+            'selectedPlan'
+        ]),
+        selected(title,mo,yr){
            let params = {
-            titulo,
+            title,
             mo,
             yr
            }
-             this.$store.commit('selectedPlan', params)
+           
+           this.selectedPlan(params)
         }
     }
  

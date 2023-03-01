@@ -9,20 +9,26 @@
                     <slot name="imagem"></slot>
                 </div>
                 
-                
                 <div class="c-plain__plans__plan__price">
-                    <h4>{{ titulo }}</h4> 
+                    <h4>
+                        {{ title }}
+                    </h4> 
 
                     <template v-if="this.$store.state.paymentYearly">
-                        <span>{{ yr }}</span> 
-                        <h6>{{ free }}</h6>
+                        <span>
+                            ${{ yr }}/yr
+                        </span> 
+                        <h6>
+                            {{ free }}
+                        </h6>
                     </template>
 
                     <template v-else>
-                        <span>{{ mo }}</span> 
+                        <span>
+                            ${{ mo }}/mo
+                        </span> 
                     </template>
                 </div>
-
             </div>
         </div>    
     </div>
@@ -35,7 +41,7 @@ export default {
             type: String,
             required: true,
         },
-        titulo:{
+        title:{
             type: String,
             required: true
         },
@@ -54,7 +60,7 @@ export default {
     },
     computed:{
         active(){
-          return  this.titulo === this.$store.state.typeOfPlan.titulo ? "active" : " "
+          return  this.title === this.$store.state.typeOfPlan.title ? "active" : " "
         }
     }
 }

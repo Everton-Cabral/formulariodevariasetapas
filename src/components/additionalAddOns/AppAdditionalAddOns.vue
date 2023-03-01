@@ -4,7 +4,14 @@
             {{ description }}
         </div>
         <div class="c-addAddOns__price">
-            {{ price }}
+            <template v-if="this.$store.state.paymentYearly">
+                +${{ yr }}/yr
+            </template>
+
+            <template v-else>
+                +${{ mo }}/mo
+            </template>
+            
         </div>
     </div>
 </template>
@@ -16,7 +23,11 @@ export default {
             type: String,
             required: true
         },
-        price: {
+        mo: {
+            type: String,
+            required: true
+        },
+        yr: {
             type: String,
             required: true
         }

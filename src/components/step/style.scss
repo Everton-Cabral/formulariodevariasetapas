@@ -12,7 +12,8 @@
         @extend .d-flex;
         @extend .justify-content-center;
         @extend .align-items-center;
-        background-color: $color-etapa-selecionada;
+        background-color: hsl(243, 100%, 62%);
+        color: white;
         font-size: 16px;
         border: solid 1px white;
         border-radius: 50%;
@@ -30,4 +31,8 @@
         color: white;
     }
 
+}
+.active{
+    background-color: $color-etapa-selecionada;
+    color: $color-btn-azul-escuro;
 }

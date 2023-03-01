@@ -6,52 +6,33 @@
             <span>Add-ons help enhance your gaming experience.</span>
         </div>
 
-        <AppComplement 
-            @click="addComplement('onlineService')"
-            :checked="checked.onlineService"
-            title="Online Service"
-            subTitle="Access to multiplayer games"
-            mo="+$1/mo"
-            yr="+$10/yr"
-        />
-
-        <AppComplement 
-            @click="addComplement('largerStorage')"
-            :checked="checked.largerStorage"
-            title="Larger storage"
-            subTitle="Extra 1TB of cloud save"
-            mo="+$2/mo"
-            yr="+$20/yr"
-        />
-
-        <AppComplement 
-            @click="addComplement('CustomProfile')"
-            :checked="checked.CustomProfile"
-            title="Customizable profile"
-            subTitle="Custom theme on your profile"
-            mo="+$2/mo"
-            yr="+$20/yr"
-        />
+        <div v-for="complement in this.$store.state.addOns" :key="complement.title">
+            <AppComplement 
+            @click="addComplement(complement)"
+            :complement="complement"
+            />
+        </div>
     </div>
 </template>
 
 <script>
 import AppComplement from '../complement/AppComplement.vue'
+import { mapMutations } from 'vuex'
 export default {
     components:{AppComplement},
     data(){
         return{
-            checked:{
-                onlineService:false,
-                largerStorage:false,
-                CustomProfile:false
-            }
+            
         }
     },
 
     methods:{
+        ...mapMutations([
+            'selectedComplements'
+        ]),
         addComplement(params){
-            this.checked[params] = !this.checked[params]
+            params.checked = !params.checked
+            this.selectedComplements(params)
         }
     }
 }

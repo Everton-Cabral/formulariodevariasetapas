@@ -13,31 +13,29 @@
 
 <script>
 import AppBtnNext from '../btn/AppBtnNext.vue';
-import AppBtnBack from '../btn/AppBtnBack.vue'
+import AppBtnBack from '../btn/AppBtnBack.vue';
+import { mapMutations } from 'vuex';
 
 export default {
     components:{AppBtnNext, AppBtnBack},
     
-    data(){
-        return{
-            currentStep: 1
-        }
-    },
+   
   
     methods:{ 
+        ...mapMutations([
+            'backStep',
+            'nextStep'
+        ]),
 
         back(){
-            this.currentStep--
-            if(this.currentStep === 0) this.currentStep = 1
-            this.$router.push(`/step${this.currentStep}`)
+           this.backStep()
+            this.$router.push(`/step${this.$store.state.currentStep}`)
         },
-
+        
         next(){
-            this.currentStep++
-            if(this.currentStep === 5) this.currentStep = 1
-            this.$router.push(`/step${this.currentStep}`)
-            this.$store.state.step1.gatilho = true 
-           
+            this.$store.state.step1.gatilho = true     
+            this.nextStep()
+            this.$router.push(`/step${this.$store.state.currentStep}`)
         }
     },
 

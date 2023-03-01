@@ -34,13 +34,14 @@
             border: solid 1px $color-cinza-claro-texto;
             color: $color-btn-azul-escuro;
             font-weight: 700;
-            font-size: 14px;      
+            font-size: 14px; 
+            padding-left: 10px;    
+            box-sizing: border-box;
         }
       
         input::placeholder {
             color: rgb(192, 192, 192);
-            padding-left: 10px;
-          }
+        }
           
         input:focus {
             outline: none;

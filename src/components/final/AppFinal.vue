@@ -9,36 +9,49 @@
         <div class="c-final__planfeatures">
             <div class="c-final__planfeatures__typeofplan">
                 <div class="c-final__planfeatures__typeofplan__description">
-                    <h4>{{ this.$store.state.typeOfPlan.titulo }}({{ payment }})</h4>
+                    <h4>
+                        {{ this.$store.state.typeOfPlan.title }}
+                        ({{ payment }})
+                    </h4>
+
                     <a href="#">Change</a>
                 </div>
 
                 <div class="c-final__planfeatures__typeofplan__price">
-                    {{ price }}
+                    <template v-if="this.$store.state.paymentYearly">
+                        ${{ price }}/yr
+                    </template>
+
+                    <template v-else>
+                        ${{ price }}/mo
+                    </template>
+                  
                 </div>
             </div>
 
             <hr>
-
-            <AppAdditionalAddOns 
-                description="Online service"
-                price="+$1/mo"
-            />
-
-            <AppAdditionalAddOns 
-                description="Larger storage"
-                price="+$2/mo"
-            />
-
+            
+            <div v-for="complement in this.$store.state.complements" :key="complement.title">
+                <AppAdditionalAddOns 
+                    :description= complement.title
+                    :mo= complement.mo
+                    :yr= complement.yr
+                />
+            </div>
         </div>
 
         <div class="c-final__total">
             <div class="c-final__total__description">
-                Total(per month)
+                Total(per {{paymentper}})
             </div>
 
             <div class="c-final__total__price">
-                +$12/mo
+                <template v-if="this.$store.state.paymentYearly">
+                    +${{ finalpriceyr }}/yr
+                </template>
+               <template v-else>
+                    +${{ finalpricemo }}/mo
+                </template>
             </div>
         </div>
     </div>
@@ -52,10 +65,19 @@ export default {
         payment(){
             return this.$store.state.paymentYearly ? 'Yearly ' : 'Monthly'
         },
+        paymentper(){
+            return this.$store.state.paymentYearly ? 'year' : 'month'
+        },
         price(){
             return this.$store.state.paymentYearly 
                 ? this.$store.state.typeOfPlan.yr 
                 : this.$store.state.typeOfPlan.mo
+        },
+        finalpricemo(){
+            return this.$store.getters.finalpricemo
+        },
+        finalpriceyr(){
+            return this.$store.getters.finalpriceyr
         }
     }
 }

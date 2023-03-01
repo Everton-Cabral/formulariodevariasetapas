@@ -1,13 +1,21 @@
 <template>
-    <div class="c-btn-next">
-       Next Step
+    <div class="c-btn-next" :style="cor">
+        <template v-if="this.$store.state.currentStep != 4">Next Step</template>
+        <template v-else>Confirm</template>
+       
     </div>
 </template>
 
 <script>
 
 export default {
-    
+    computed:{
+        cor(){
+            return this.$store.state.currentStep === 4 
+             ? 'background-color: hsl(243, 100%, 62%)' : 
+             ''
+        }
+    }
 }
 </script>
 
@@ -32,6 +40,7 @@ export default {
     background-color: hsl(213, 30%, 35%);
     cursor: pointer;
 }
+
 </style>
 
 
