@@ -5,20 +5,11 @@
 .c-step2{
     padding: 50px 90px 0px 90px;
     font-family: $font-principal;
-   
-    &__titulo{
-        @extend .form_title
-    }
-
+    
     &__plans{
         @extend .d-flex;
-        @extend  .justify-content-space-between;
-
-       
-
-       
+        @extend  .justify-content-space-between; 
     }
-
     &__payment{
         font-family:$font-principal;
         background-color: $color-background;
@@ -35,8 +26,7 @@
             --toggle-bg-on: hsl(213, 96%, 18%);
             --toggle-border-on: hsl(213, 96%, 18%);
             --toggle-bg-off: hsl(213, 96%, 18%);
-            --toggle-border-off: hsl(213, 96%, 18%);
-                       
+            --toggle-border-off: hsl(213, 96%, 18%);              
         }
         &__toggle:focus{
             box-shadow: none;

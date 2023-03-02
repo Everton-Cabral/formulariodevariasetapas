@@ -1,9 +1,9 @@
 <template>
     <div class="c-step2">
-        <div class="c-step2__titulo">
-            <h1>Select your plan</h1>
-            <span>You have the option of monthly or yearly billing</span>
-        </div>
+        <AppTitle 
+            title="Select your plan"
+            subTitle="You have the option of monthly or yearly billing"
+        />
 
         <div class="c-step2__plans">
             <div v-for="plain in plains" :key="plain.title">
@@ -42,10 +42,11 @@
 
 import AppPlain from '../plain/AppPlain.vue'
 import Toggle from '@vueform/toggle'
+import AppTitle from '../title/AppTitile.vue'
 import { mapMutations } from 'vuex'
 
 export default {
-    components: { Toggle, AppPlain },
+    components: { Toggle, AppPlain, AppTitle },
 
     data() {
       return {
@@ -89,8 +90,7 @@ export default {
            
            this.selectedPlan(params)
         }
-    }
- 
+    } 
 }
 </script>
 

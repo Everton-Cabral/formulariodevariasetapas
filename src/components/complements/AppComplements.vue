@@ -1,10 +1,9 @@
 <template>
     <div class="c-complements">
-        <div class="c-complements__titulo">
-            <h1>Pick add-ons</h1>
-
-            <span>Add-ons help enhance your gaming experience.</span>
-        </div>
+        <AppTitle 
+            title="Pick add-ons"
+            subTitle="Add-ons help enhance your gaming experience."
+        />
 
         <div v-for="complement in this.$store.state.addOns" :key="complement.title">
             <AppComplement 
@@ -16,10 +15,11 @@
 </template>
 
 <script>
+import AppTitle from '../title/AppTitile.vue'
 import AppComplement from '../complement/AppComplement.vue'
 import { mapMutations } from 'vuex'
 export default {
-    components:{AppComplement},
+    components:{AppComplement, AppTitle},
     data(){
         return{
             

@@ -1,9 +1,9 @@
 <template>
     <div class="c-step1">
-        <div class="c-step1__titulo">
-            <h1>Personal Info</h1>
-            <span>Please provide your name, email address, and phone number.</span>
-        </div>
+        <AppTitle 
+            title="Personal Info"
+            subTitle="Please provide your name, email address, and phone number."
+        />
         <div class="c-step1__formulario">
             
             <div class="c-step1__formulario__titulo">
@@ -30,15 +30,11 @@
 </template>
 
 <script>
+import AppTitle from '../title/AppTitile.vue'
 import { mapState } from 'vuex';
 
 export default {
-    data() {
-        return {
-            
-          
-        }
-    },
+    components:{ AppTitle },
     computed:{
         ...mapState({
             name: state => state.step1.name,

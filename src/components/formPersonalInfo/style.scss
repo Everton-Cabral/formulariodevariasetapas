@@ -2,19 +2,6 @@
 .c-step1{
     padding: 50px 90px 0px 90px;
     font-family: $font-principal;
-   
-
-    &__titulo{
-        margin-bottom: 30px;
-    
-        h1{
-            color: $color-btn-azul-escuro;
-            margin-bottom: 10px;
-        }
-        span{
-            color: $color-cinza-claro-texto;
-        }
-    }
  
     &__formulario{
         font-size: 14px;

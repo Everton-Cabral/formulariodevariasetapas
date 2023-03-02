@@ -1,11 +1,10 @@
 <template>
     <div class="c-final">
-        <div class="c-final__titulo">
-            <h1>Finishing up</h1>
-
-            <span>Double-check everything looks OK before confirming.</span>
-        </div>
-
+        <AppTitle 
+            title="Finishing up"
+            subTitle="Double-check everything looks OK before confirming."
+        />
+      
         <div class="c-final__planfeatures">
             <div class="c-final__planfeatures__typeofplan">
                 <div class="c-final__planfeatures__typeofplan__description">
@@ -58,9 +57,10 @@
 </template>
 
 <script>
+import AppTitle from '../title/AppTitile.vue'
 import AppAdditionalAddOns from '../additionalAddOns/AppAdditionalAddOns.vue';
 export default {
-    components:{AppAdditionalAddOns},
+    components:{AppAdditionalAddOns, AppTitle},
     computed:{
         payment(){
             return this.$store.state.paymentYearly ? 'Yearly ' : 'Monthly'
