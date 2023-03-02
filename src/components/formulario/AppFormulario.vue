@@ -4,9 +4,9 @@
             <router-view />    
            
         </div>
-        <div class="c-formulario__footer">
+        <div class="c-formulario__footer" v-show="this.$store.state.currentStep != 5">
             <AppBtnBack  @click="back"/>
-            <AppBtnNext @click="next"/>    
+            <AppBtnNext  @click="next"/>    
         </div>
     </div>
 </template>

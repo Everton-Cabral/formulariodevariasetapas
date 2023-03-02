@@ -19,10 +19,16 @@ export default {
         descricao: String,
     },
     computed:{
-       active(){
-        return this.$store.state.currentStep == this.numero ? 'active' : ''
-       }
-    }
+        active(){
+            let resultado
+            if(this.$store.state.currentStep == this.numero ){
+            resultado = 'active'
+            } else if(this.$store.state.currentStep == 5 && this.numero == 4){
+                resultado = 'active'
+            }
+            return resultado
+            } 
+        }
 }
 </script>
 

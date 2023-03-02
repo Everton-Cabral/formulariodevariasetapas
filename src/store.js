@@ -10,9 +10,9 @@ export default createStore({
         gatilho: false
     },
     typeOfPlan: {
-      title:'',
-      mo:'',
-      yr:''
+      title:'Arcade',
+      mo:9,
+      yr:90
     },
     paymentYearly: false,
     addOns:{
@@ -54,7 +54,7 @@ export default createStore({
       function next(){ 
         state.currentStep++
         
-        if(state.currentStep === 5){
+        if(state.currentStep === 6){
           state.currentStep = 1
         }
       }
