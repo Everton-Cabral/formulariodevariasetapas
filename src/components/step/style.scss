@@ -36,3 +36,19 @@
     background-color: $color-etapa-selecionada;
     color: $color-btn-azul-escuro;
 }
+
+@media screen and (max-width: 999px){
+    .c-step{
+        background-color: unset;
+        padding: 5px;
+
+        &__descricao{
+            display: none;
+        }
+        &__number{
+            margin-bottom: 70px;
+            height: 11px;
+            padding: 12px;
+        }
+    }
+}

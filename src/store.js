@@ -53,7 +53,6 @@ export default createStore({
 
       function next(){ 
         state.currentStep++
-        
         if(state.currentStep === 6){
           state.currentStep = 1
         }

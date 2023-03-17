@@ -26,6 +26,7 @@ $color-background: hsl(217, 100%, 97%);
     }
 }
 
+
 @each $justify-content in (center, space-between){
     .justify-content-#{$justify-content}{
         justify-content: $justify-content;

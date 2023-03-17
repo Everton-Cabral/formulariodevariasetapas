@@ -33,4 +33,9 @@ export default {
         color: $color-cinza-claro-texto;
     }
 }
+@media screen and (max-width: 999px){
+    span{
+        line-height: 24px;
+    }
+}
 </style>

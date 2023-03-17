@@ -37,3 +37,23 @@
         }
     }
 }
+@media screen and (max-width: 999px){ 
+    .c-step2{
+        background-color: white;
+        padding: 10% 5% 5% 5%; 
+        margin: -65px 15px 0px 15px;
+        border-radius: 10px;
+
+        &__plans{
+            flex-direction: column;
+            
+    
+        }
+        &__payment{
+            
+            justify-content: space-around;
+            padding: 0px 5px 0px 5px;
+        }
+        
+    }
+}

@@ -64,3 +64,32 @@
     }
     
 }
+@media screen and (max-width: 999px){ 
+    .c-plain{
+
+        
+        &__plans{
+            padding: 12px;
+            
+
+            &__plan{
+                width: 100%;
+                height: 60px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: baseline;
+                justify-content: flex-start;
+              
+
+              &__img{
+                margin-bottom: unset;
+              }
+                &__price{
+                    margin-left: 15px;
+                    padding-bottom: unset;
+                }
+            }
+
+        }
+    }
+}
