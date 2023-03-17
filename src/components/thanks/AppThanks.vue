@@ -48,4 +48,14 @@ export default {
         align-items: stretch;
     }
 }
+@media screen and (max-width: 999px){ 
+    .c-thanks{
+        background-color: white;
+        padding: 25% 5% 25% 5%; 
+        margin: -65px 15px 0px 15px;
+        border-radius: 10px;
+        text-align: center;
+        height: auto;
+    }
+}
 </style>
