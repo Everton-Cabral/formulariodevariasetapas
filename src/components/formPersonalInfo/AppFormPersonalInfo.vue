@@ -11,7 +11,7 @@
                 <span v-show="name_required" class="c-step1__formulario__titulo__required">This field is required</span>
             </div>
             <input v-model="this.$store.state.step1.name" :style="name_required ? 'border-color: red;' : ''" type="text" placeholder="e.g Stephen King">
-
+            
 
             <div class="c-step1__formulario__titulo">
                 <span>Email Address</span> 
@@ -47,7 +47,8 @@ export default {
         return  this.name === '' && this.gatilho
     },
     email_required(){
-        return  this.email === '' && this.gatilho 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return  !emailRegex.test(this.email)  && this.gatilho 
     },
     phone_required(){
         return  this.phone === '' && this.gatilho 

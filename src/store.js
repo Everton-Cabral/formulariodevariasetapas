@@ -57,8 +57,8 @@ export default createStore({
           state.currentStep = 1
         }
       }
-      
-      if(state.step1.name != '' && state.step1.email != '' &&  state.step1.phone != '' ){
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if(state.step1.name != '' && emailRegex.test(state.step1.email) &&  state.step1.phone != '' ){
        next()
       }
     },
