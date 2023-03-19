@@ -24,7 +24,7 @@
                 <span>Phone Number</span> 
                 <span v-show="phone_required" class="c-step1__formulario__titulo__required">This field is required</span>
             </div>
-            <input v-model="this.$store.state.step1.phone" :style="phone_required ? 'border-color: red;' : ''" type="text" placeholder="e.g + 1 234 567 890">
+            <input v-model="this.$store.state.step1.phone" :style="phone_required ? 'border-color: red;' : ''" type="number" placeholder="e.g + 1 234 567 890">
         </div>
     </div>
 </template>
